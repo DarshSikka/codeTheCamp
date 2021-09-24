@@ -1,0 +1,62 @@
+<div id="home">
+<div :class="['hero', img==='default'?'homeIllus':'secondHero']">
+    <div class="hero-content">
+    <div class="radios">
+        <input type="radio" v-model="img" value="default"/>
+        <input type="radio" v-model="img" value="secondary"/>
+        </div>
+        <div class="hero-text"><h1 id="title">#include &lt;code The Camp&gt;</h1>
+   <p id="tagline" style="width: 60%;">"Experiences we create are for life, not for work. Learn what you like, and remember it for life"</p>
+    <p id="author">~ codeTheCamp</p><br /><div style="display:flex"><code id="typing-effect">{{typer}}</code><span class="cursor"></span></div>
+    </div>
+   </div>
+</div>
+<nav :class="['navbar', navbarUp?'fixedNavbar':'']">
+    <div style="display: flex;">
+    <a href="/home">Home</a>
+    <a href="/pricing">Pricing</a>
+    <a href="/about">About Us</a>
+    </div>
+    <button class="login-button">
+        Login
+    </button>
+</nav>
+<div class="courses">
+    <div class="course">
+        <img src="/MachineLearning.png">
+        <div>
+            <h1>Machine Learning</h1>
+            <p>
+                Teach the computer for your needs. Ever wanted to stop using face identification and start making it? Or ever wanted to make your own Alexa? Here’s a chance to do it
+            </p>
+        </div>
+    </div>
+    <div class="course">
+        <div>
+            <h1>Web Development</h1>
+            <p>
+                Here’s the time to shine and make the click of the link projects, which look amazing, and work unbeleivably well, show these to others and win their hearts for a lifetime
+            </p>
+        </div>
+        <img src="/WebDevelopment.png">
+    </div>
+    <div class="course">
+        <img src="/GameDev.png">
+        <div>
+            <h1>Game Development</h1>
+            <p>
+                I think we all can agree we all love games. Ever thought of developing one instead, if yes enroll in our course to learn game development step-by-step.
+            </p>
+        </div>
+    </div><br /><br />
+</div>
+</div>
+<footer>
+    Made with <span style="color: red">&lt;3</span> by Exun Clan
+</footer>
+<script src="/js/typing-effect.js"></script>
+<script src="https://unpkg.com/vue@3.0.1"></script>
+<script src="/js/home.js"></script>
+<style>
+    @import url("/css/home.css");
+</style>
