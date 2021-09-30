@@ -1,0 +1,54 @@
+#about {
+  background-image: url("/about/about.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  width: 100vw;
+  height: 100vh;
+}
+
+.description {
+  font-size: 30px;
+  width: 50%;
+  padding-top: 20rem;
+  font-family: "Inter", sans-serif;
+}
+
+ul.description {
+  margin-left: 30rem;
+}
+
+#courses {
+  background-image: url("/about/courses.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  margin-top: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+@media (max-width: 900px) {
+  #about {
+    width: 100vw;
+    height: 60vh;
+    background-image: url("/mobile/courses.png");
+  }
+  #about .description {
+    margin-top: 0;
+    padding-top: 15rem;
+    width: 100%;
+    font-size: 15px;
+  }
+
+  #courses {
+    background-image: url("/mobile/courses.png");
+    height: 60vh;
+  }
+  #courses ul {
+    margin-left: 0;
+    font-size: 15px;
+    text-align: left;
+    margin: auto;
+  }
+}
+
+/*# sourceMappingURL=about.css.map */

@@ -1,6 +1,7 @@
-@import "variables";
+@import "_variables";
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300&family=Pangolin&display=swap");
 body {
   background-color: $main;
-  color: white;
+  color: $white;
   text-align: center;
 }

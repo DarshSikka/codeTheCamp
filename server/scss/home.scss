@@ -1,5 +1,9 @@
+//my stylesheet
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300&family=Pangolin&display=swap");
 @import "_variables";
+body {
+  margin: 0;
+}
 .hero {
   display: flex;
   align-items: center;
@@ -22,6 +26,19 @@
   font-size: 30px;
   font-family: "Pangolin", cursive;
 }
+
+@media (max-width: 900px) {
+  .homeIllus {
+    background-image: url("/mobile/home.png");
+    background-size: 110%;
+  }
+  #title {
+    font-size: 60px;
+  }
+  .hero {
+    height: 110vh;
+  }
+}
 .hero-content {
   background: rgba(0, 0, 0, 0.58);
   display: flex;
@@ -31,9 +48,29 @@
   flex-direction: column;
   align-items: center;
 }
+@media (max-width: 900px) {
+  .course {
+    flex-direction: column;
+  }
+  .course:nth-child(1) {
+    flex-direction: column-reverse;
+  }
+  .course:nth-child(3) {
+    flex-direction: column-reverse;
+  }
+  .course:nth-child(5) {
+    flex-direction: column-reverse;
+  }
+  .course p {
+    width: 100%;
+  }
+}
 @media (max-width: 800px) {
   .hero-text {
-    justify-content: flex-end;
+    height: 100%;
+  }
+  #quote {
+    padding: 0;
   }
 }
 #typing-effect {
@@ -83,8 +120,8 @@
   color: $white;
   font-size: 20px;
   text-decoration: none;
-  padding: 1rem;
   font-family: "Inter", sans-serif;
+  padding: 0px 1rem;
 }
 .navbar {
   background: $navbar;
@@ -110,12 +147,12 @@
   font-family: "Inter", sans-serif;
 }
 .course p {
-  width: 50%;
-  margin: auto;
   font-size: 20px;
-  font-family: "Inter", sans-serif;
 }
-.courses {
+.course div {
+  width: 60%;
+}
+.courses-landing {
   margin-top: 50px;
 }
 .course {
@@ -128,5 +165,37 @@ footer {
   font-family: "Inter", sans-serif;
   background-color: $white;
   color: black;
-  width: 100%;
+  width: 100vw;
+}
+@media (max-width: 700px) {
+  .course div {
+    width: 100%;
+  }
+  .course h1 {
+    font-size: 50px;
+  }
+}
+table {
+  margin: auto;
+}
+td,
+th {
+  border: 2px solid white;
+  font-size: 20px;
+  text-align: left;
+  padding: 1rem;
+}
+tr:nth-child(even) {
+  background-color: $dark;
+}
+tr:nth-child(odd) {
+  background-color: $navbar;
+}
+tr:nth-child(even):hover {
+  background-color: $navbar;
+  transition-duration: 2s;
+}
+tr:nth-child(odd):hover {
+  background-color: $dark;
+  transition-duration: 2s;
 }

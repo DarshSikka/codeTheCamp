@@ -1,0 +1,48 @@
+<a href="/" style="color: white; text-decoration: none; font-size: 50px;">Back Home</a>
+<div id="app">
+<div style="display: flex; justify-content: space-around;">
+    <button :class="['btn', signup?'active-btn':'inactive-btn']" @click='set(true)'>REGISTER</button>
+    <button :class="['btn', signup?'inactive-btn':'active-btn']" @click='set(false)'>Login</button>
+</div>
+<div id="main-form">
+    <img id="banner" :src="signup?'/signup.png':'/login.png'" />
+    <form method="POST" action="/auth/new-student" class="signup-form" v-if="signup">
+    <input class="text-input" name="name" id="name" placeholder="Name" required/>
+    <input class="text-input" name="email" type="email"id="email" placeholder="Email"required />
+    <input class="text-input" type="password" name="password" placeholder="Password"required/>
+    <select class="select" name="subject"required >
+        <option value="" disabled selected>select a subject</option>
+        <option value="ML">Machine Learning</option>
+        <option value="GameDev">Game Development</option>
+        <option value="AppDev">App Development</option>
+        <option value="WebDev">Web Development</option>
+        <option value="CP">Competitive Programming</option>
+    </select>
+    <button type="submit" name="submit">Submit</button>
+    </form>
+    <form method="POST" action="/auth/login" class="signup-form" v-if="!signup">
+        <input class="text-input"name="email" placeholder="Email">
+        <input class="text-input" name='password' type='password' placeholder="Password"/>
+        <button type="submit" name="submit">Submit</button>
+    </form>
+</div>
+</div>
+<style>
+    @import url("/css/signup.css");
+</style>
+<script src="https://unpkg.com/vue@3.0.1"></script>
+<script>
+    const app=Vue.createApp({
+       data(){
+           return {
+               signup: false
+           }
+       },
+       methods: {
+           set(to){
+               this.signup=to
+           }
+       }
+    })
+    app.mount("#app")
+</script>

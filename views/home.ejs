@@ -12,16 +12,28 @@
    </div>
 </div>
 <nav :class="['navbar', navbarUp?'fixedNavbar':'']">
-    <div style="display: flex;">
-    <a href="/home">Home</a>
+    <div style="display: flex; align-items: center;">
+    <a href="/dashboard"><img src="/logo.png" width="40" height="40"></a>
     <a href="/pricing">Pricing</a>
-    <a href="/about">About Us</a>
+    <a href="#about">About Us</a>
     </div>
-    <button class="login-button">
-        Login
-    </button>
+
+    <% if(user.student){%>
+        <a href="/logout">
+          <button class="login-button">
+              <%= user.student.name %>
+          </button>
+          </a>
+    <% } %>
+    <% if(!user.student){ %>
+        <a href="/login">
+       <button class="login-button">
+         Login
+       </button>
+       </a>
+    <%}%>
 </nav>
-<div class="courses">
+<div class="courses-landing">
     <div class="course">
         <img src="/MachineLearning.png">
         <div>
@@ -48,9 +60,219 @@
                 I think we all can agree we all love games. Ever thought of developing one instead, if yes enroll in our course to learn game development step-by-step.
             </p>
         </div>
-    </div><br /><br />
+    </div>
+    <div class="course">
+        <div>
+            <h1>App Development</h1>
+            <p>
+                Use all those mobile apps ? Here’s a chace to make them, with our App Development course, you will learn step by step how to make applications, with fascinating UI and complex database calls. We explain both android and iOs applications!
+            </p>
+        </div>
+        <img src="/AppDev.png">
+    </div>
+    <div class="course">
+        <img src="/CP.png">
+        <div>
+            <h1>Competitve Programming</h1>
+            <p>
+                Have a good mind for logic. Like maths? These are symptoms that you can become a great competitive programmer. Enroll now, and learn these algorithms with c++ to get started. 
+            </p>
+        </div>
+    </div>
+    <br /><br />
 </div>
 </div>
+<div id="about">
+    <p class="description">
+        Ever wondered who is behind all these amazing apps you use? It can be you one day. We are a coding bootcamp to make you be on the front page of a website as the creator of it.  are the top coding bootcamps for over 15 years and trust me when you enroll with us, you enroll with the best coding bootcamp out there. 
+    </p>
+</div>
+<div id="courses">
+     <ul class="description">
+         <li>Machine Learning</li>
+         <li>Web Development</li>
+         <li>App Development</li>
+         <li>Competitve Programming</li>
+         <li>Game Development</li>
+     </ul>
+</div>
+<h1>Curicullum Overview</h1>
+<h2>Machine Leaning</h2>
+<table id="ml">
+    <tr>
+      <th>Concept</th>
+      <th>Classes</th>
+      <th>Course Required</th>
+    </tr>
+    <tr>
+      <td>Overview</td>
+      <td>Trial class - class 0</td>
+      <td>Free Pack</td>
+    </tr>
+    <tr>
+      <td>Intro to coding and Python Syntax</td>
+      <td>Class 1-25</td>
+      <td>Bronze Coder onwards</td>
+    </tr>
+    <tr>
+        <td>Data Science with plotly, numpy, pandas, matplotlib and seaborn</td>
+        <td>Class 26-40</td>
+        <td>Silver Coder onwards</td>
+    </tr>
+    <tr>
+        <td>AI with sckit learn</td>
+        <td>Class 41-45</td>
+        <td>Silver Coder onwards</td>
+    </tr>
+    <tr>
+        <td>Image Identification with opencv(cv2)</td>
+        <td>Class 46-50</td>
+        <td>Silver Coder Onwards</td>
+    </tr>
+    <tr>
+        <td>Voice Identification</td>
+        <td>Class 51-65</td>
+        <td>Gold Coder</td>
+    </tr>
+    <tr>
+        <td>Advanced AI</td>
+        <td>Class 66-75</td>
+        <td>Gold Coder</td>
+    </tr>
+  </table>
+  <h1>Web Development</h1>
+  <table id="wd">
+    <tr>
+      <th>Concept</th>
+      <th>Classes</th>
+      <th>Course Required</th>
+    </tr>
+    <tr>
+      <td>Overview</td>
+      <td>Trial class - class 0</td>
+      <td>Free Pack</td>
+    </tr>
+    <tr>
+      <td>Intro to the web and HTML and CSS</td>
+      <td>Class 1-25</td>
+      <td>Bronze Coder onwards</td>
+    </tr>
+    <tr>
+        <td>Vanilla JS and Node.js, understanding the various uses of javascript</td>
+        <td>Class 26-40</td>
+        <td>Silver Coder onwards</td>
+    </tr>
+    <tr>
+        <td>Express.js and mongoose</td>
+        <td>Class 41-45</td>
+        <td>Silver Coder onwards</td>
+    </tr>
+    <tr>
+        <td>Vue.js CDN</td>
+        <td>Class 46-50</td>
+        <td>Silver Coder Onwards</td>
+    </tr>
+    <tr>
+        <td>Vue.js CLI and full MEVN stack app</td>
+        <td>Class 51-65</td>
+        <td>Gold Coder</td>
+    </tr>
+    <tr>
+        <td>Discord.js to make discord bots</td>
+        <td>Class 66-75</td>
+        <td>Gold Coder</td>
+    </tr>
+  </table>
+  <h1>App Development</h1>
+  <table id="ml">
+    <tr>
+      <th>Concept</th>
+      <th>Classes</th>
+      <th>Course Required</th>
+    </tr>
+    <tr>
+      <td>Overview</td>
+      <td>Trial class - class 0</td>
+      <td>Free Pack</td>
+    </tr>
+    <tr>
+      <td>Intro to coding and Python Syntax</td>
+      <td>Class 1-25</td>
+      <td>Bronze Coder onwards</td>
+    </tr>
+    <tr>
+        <td>Data Science with plotly, numpy, pandas, matplotlib and seaborn</td>
+        <td>Class 26-40</td>
+        <td>Silver Coder onwards</td>
+    </tr>
+    <tr>
+        <td>AI with sckit learn</td>
+        <td>Class 41-45</td>
+        <td>Silver Coder onwards</td>
+    </tr>
+    <tr>
+        <td>Image Identification with opencv(cv2)</td>
+        <td>Class 46-50</td>
+        <td>Silver Coder Onwards</td>
+    </tr>
+    <tr>
+        <td>Voice Identification</td>
+        <td>Class 51-65</td>
+        <td>Gold Coder</td>
+    </tr>
+    <tr>
+        <td>Advanced AI</td>
+        <td>Class 66-75</td>
+        <td>Gold Coder</td>
+    </tr>
+  </table>
+  <h1>Web Development</h1>
+  <table id="ad">
+    <tr>
+      <th>Concept</th>
+      <th>Classes</th>
+      <th>Course Required</th>
+    </tr>
+    <tr>
+      <td>Overview</td>
+      <td>Trial class - class 0</td>
+      <td>Free Pack</td>
+    </tr>
+    <tr>
+      <td>Intro to Java syntax</td>
+      <td>Class 1-25</td>
+      <td>Bronze Coder onwards</td>
+    </tr>
+    <tr>
+        <td>Android studio XML and java</td>
+        <td>Class 26-40</td>
+        <td>Silver Coder onwards</td>
+    </tr>
+    <tr>
+        <td>Full android app with firebase</td>
+        <td>Class 41-45</td>
+        <td>Silver Coder onwards</td>
+    </tr>
+    <tr>
+        <td>Spring boot REST API</td>
+        <td>Class 46-50</td>
+        <td>Silver Coder Onwards</td>
+    </tr>
+    <tr>
+        <td>Vue.js CLI and full MEVN stack app</td>
+        <td>Class 51-65</td>
+        <td>Gold Coder</td>
+    </tr>
+    <tr>
+        <td>Discord.js to make discord bots</td>
+        <td>Class 66-75</td>
+        <td>Gold Coder</td>
+    </tr>
+  </table>
+<br><br>
+<style>
+    @import url("/css/about.css");
+</style>
 <footer>
     Made with <span style="color: red">&lt;3</span> by Exun Clan
 </footer>
@@ -59,4 +281,5 @@
 <script src="/js/home.js"></script>
 <style>
     @import url("/css/home.css");
+    @import url('/css/about.css');
 </style>

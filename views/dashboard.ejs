@@ -1,0 +1,35 @@
+<nav class="navbar">
+    <div style="display: flex; align-items: center;">
+    <a href="/"><img src="/logo.png" width="40" height="40"></a>
+    <a href="/pricing">Pricing</a>
+    <a href="#about">About Us</a>
+    </div>
+
+    <% if(user.student){%>
+        <a href="/logout">
+          <button class="login-button">
+              <%= user.student.name %>
+          </button>
+          </a>
+    <% } %>
+    <% if(!user.student){ %>
+        <a href="/login">
+       <button class="login-button">
+         Login
+       </button>
+       </a>
+    <%}%>
+</nav>
+<h1>Hi, <%= user.student.name %></h1>
+<% if(!user.student.verified){ %>
+    Your email has not been verified, <a verif href="/auth/verify-email">click to verify</a>
+<%}%>
+<% if(user.student.verified){ %>
+    <span style="color: green; font-size: 20px;">Your email has been verified</span>
+ <% } %>
+ <p>Your course: <%=user.student.subject %></p>
+<style>
+    @import url("/css/layout.css");
+    @import url("/css/home.css");
+    @import url("/css/dashboard.css");
+</style>
