@@ -1,0 +1,119 @@
+<div id="admin">
+<nav class="navbar">
+    <div style="display: flex; align-items: center;">
+    <a href="/dashboard"><img src="/logo.png" width="40" height="40"></a>
+    <a href="/pricing">Pricing</a>
+    <a href="#about">About Us</a>
+    </div>
+    <a href="/signup"><button class="login-button">Auth</button></a>
+</nav>
+<div class="selection">
+    <button @click="()=>i=0">Manage Students</button>
+    <button @click="()=>i=1">Upload Article</button>
+    <button @click="()=>i=2">Upload Lecture</button>
+</div>
+<div v-if="i==0">
+<form id="find-student" method="POST" action="/auth/find-student">
+    <input type="email" name="email" placeholder="Email" />
+    <button type="submit">Find</button>
+</form>
+<% if(student){ %>
+    <div class="student-details">
+        <%= console.log(student); %>
+       <p>Name: <%= student.name %></p>
+       <p>Pack: <%= student.pack %></p>
+       <p>Subject: <%= student.subject %></p>
+       <p>Email Verified: <%=student.verified?"yes":"no"%></p>
+       <form method="POST" action="/auth/update-student">
+         <input type="email" name="email"value="<%=student.email%>" readonly />
+         <input type="password"name="password" placeholder="Admin Password"/>
+         <select name="pack">
+             <option>Free Pack</option>
+             <option>Bronze Coder</option>
+             <option>Silver Coder </option>
+             <option>Gold Coder </option>
+         </select>
+         <button type="submit">Submit</button>
+       </form>
+       </div>
+<% } %>
+</div>
+<div v-if="i==1">
+    <form method="POST" class="article"action="/auth/new-article">
+       <input type="text" placeholder="Title" name="title">
+       <textarea name="html">
+           Write HTML
+       </textarea>
+       <input type="password" placeholder="Password" name="password" />
+       <button type="submit">Submit</button>
+    </form>
+</div>
+<div v-if="i==2">
+    <form action="/auth/new-lecture" method="post" enctype="multipart/form-data">
+        <input type="text" name="title" placeholder="Title" />
+        <input type="file" name="video" accept="video/*"/>
+        <input name="password" type="password" />
+        <button type="submit">Submit</button>
+      </form>
+</div>
+</div>
+<style>
+    @import url('/css/layout.css');
+    @import url('/css/home.css');
+    @import url("/css/admin.css");
+    form.article{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 30%;
+        margin: auto;
+        height: 70vh;
+    }
+    form.article input{
+        font-size:20px;
+        padding: 1rem 0.5rem;
+    }
+    form.article textarea{
+        height: 500px;
+    }
+    form.article button{
+        padding: 1rem 2rem;
+        font-size: 20px
+    }
+</style>
+<script src="https://unpkg.com/vue@3.0.1"></script>
+<script>
+    const app=Vue.createApp({
+        data(){
+            return{
+                i: 0,
+            }
+        },
+        methods: {
+            setFile(e){
+                console.log('Calling setfile');
+                const rdr=new FileReader();
+                rdr.onload=(eve)=>{
+                    let buffer = e.target.result;
+
+  // We have to convert the buffer to a blob:
+                    let videoBlob = new Blob([new Uint8Array(buffer)], {type: "video/mp4" });
+  // The blob gives us a URL to the video file:
+                    let url = URL.createObjectURL(videoBlob);
+                    const source=document.querySelector("source");
+                    if(source){
+                        source.remove();
+                    }
+                    const vidoe=document.querySelector("video");
+                    const ele=document.createElement('source');
+                    console.log(url);
+                    ele.src=url;
+                    vidoe.appendChild(ele);
+                }
+                rdr.readAsArrayBuffer(e.target.files[0]);
+            }
+        }
+    })
+    app.mount("#admin");
+    
+</script>

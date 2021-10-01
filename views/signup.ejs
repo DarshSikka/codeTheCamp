@@ -1,6 +1,6 @@
 <a href="/" style="color: white; text-decoration: none; font-size: 50px;">Back Home</a>
 <div id="app">
-<div style="display: flex; justify-content: space-around;">
+<div style="display: flex; justify-content: space-around; margin-bottom: 20px;">
     <button :class="['btn', signup?'active-btn':'inactive-btn']" @click='set(true)'>REGISTER</button>
     <button :class="['btn', signup?'inactive-btn':'active-btn']" @click='set(false)'>Login</button>
 </div>

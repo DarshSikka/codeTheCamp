@@ -1,1 +1,1 @@
-{"version":3,"sourceRoot":"","sources":["../../server/scss/dashboard.scss"],"names":[],"mappings":"AAAA;EACE;EACA;EACA","file":"dashboard.css"}
+{"version":3,"sourceRoot":"","sources":["../../server/scss/dashboard.scss","../../server/scss/_variables.scss"],"names":[],"mappings":"AACA;EACE;EACA;EACA;;;AAGA;EACE;EACA,OCFI;EDGJ;EACA;;;AAGJ;EACE,OCRM;;;ADUR;EACE;;;AAEF;EACE;;;AAEF;EACE;;;AAEF;EACE;EACA;EACA","file":"dashboard.css"}

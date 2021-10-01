@@ -14,7 +14,7 @@
 <nav :class="['navbar', navbarUp?'fixedNavbar':'']">
     <div style="display: flex; align-items: center;">
     <a href="/dashboard"><img src="/logo.png" width="40" height="40"></a>
-    <a href="/pricing">Pricing</a>
+    <a href="#pricing">Pricing</a>
     <a href="#about">About Us</a>
     </div>
 
@@ -26,9 +26,9 @@
           </a>
     <% } %>
     <% if(!user.student){ %>
-        <a href="/login">
+        <a href="/signup">
        <button class="login-button">
-         Login
+        <img src="https://img.icons8.com/ios/50/000000/user--v1.png"/>
        </button>
        </a>
     <%}%>
@@ -84,7 +84,7 @@
 </div>
 <div id="about">
     <p class="description">
-        Ever wondered who is behind all these amazing apps you use? It can be you one day. We are a coding bootcamp to make you be on the front page of a website as the creator of it.  are the top coding bootcamps for over 15 years and trust me when you enroll with us, you enroll with the best coding bootcamp out there. 
+        Ever wondered who is behind all these amazing apps you use? It can be you one day. We are a coding bootcamp to make you be on the front page of a website as the creator of it.  We are the top coding bootcamps for over 15 years and trust me when you enroll with us, you enroll with the best coding bootcamp out there. 
     </p>
 </div>
 <div id="courses">
@@ -97,7 +97,7 @@
      </ul>
 </div>
 <h1>Curicullum Overview</h1>
-<h2>Machine Leaning</h2>
+<h1>Machine Leaning</h1>
 <table id="ml">
     <tr>
       <th>Concept</th>
@@ -153,12 +153,12 @@
       <td>Free Pack</td>
     </tr>
     <tr>
-      <td>Intro to the web and HTML and CSS</td>
+      <td>Intro to HTML and CSS with Javascript</td>
       <td>Class 1-25</td>
       <td>Bronze Coder onwards</td>
     </tr>
     <tr>
-        <td>Vanilla JS and Node.js, understanding the various uses of javascript</td>
+        <td>Vue.js CDN & CLI, intro to NPM and node.js</td>
         <td>Class 26-40</td>
         <td>Silver Coder onwards</td>
     </tr>
@@ -168,65 +168,22 @@
         <td>Silver Coder onwards</td>
     </tr>
     <tr>
-        <td>Vue.js CDN</td>
+        <td>MEVN stack app with in depth backend</td>
         <td>Class 46-50</td>
         <td>Silver Coder Onwards</td>
     </tr>
     <tr>
-        <td>Vue.js CLI and full MEVN stack app</td>
+        <td>Advanced SSR application with authentication</td>
         <td>Class 51-65</td>
         <td>Gold Coder</td>
     </tr>
     <tr>
-        <td>Discord.js to make discord bots</td>
+        <td>Web Sockets</td>
         <td>Class 66-75</td>
         <td>Gold Coder</td>
     </tr>
   </table>
   <h1>App Development</h1>
-  <table id="ml">
-    <tr>
-      <th>Concept</th>
-      <th>Classes</th>
-      <th>Course Required</th>
-    </tr>
-    <tr>
-      <td>Overview</td>
-      <td>Trial class - class 0</td>
-      <td>Free Pack</td>
-    </tr>
-    <tr>
-      <td>Intro to coding and Python Syntax</td>
-      <td>Class 1-25</td>
-      <td>Bronze Coder onwards</td>
-    </tr>
-    <tr>
-        <td>Data Science with plotly, numpy, pandas, matplotlib and seaborn</td>
-        <td>Class 26-40</td>
-        <td>Silver Coder onwards</td>
-    </tr>
-    <tr>
-        <td>AI with sckit learn</td>
-        <td>Class 41-45</td>
-        <td>Silver Coder onwards</td>
-    </tr>
-    <tr>
-        <td>Image Identification with opencv(cv2)</td>
-        <td>Class 46-50</td>
-        <td>Silver Coder Onwards</td>
-    </tr>
-    <tr>
-        <td>Voice Identification</td>
-        <td>Class 51-65</td>
-        <td>Gold Coder</td>
-    </tr>
-    <tr>
-        <td>Advanced AI</td>
-        <td>Class 66-75</td>
-        <td>Gold Coder</td>
-    </tr>
-  </table>
-  <h1>Web Development</h1>
   <table id="ad">
     <tr>
       <th>Concept</th>
@@ -239,7 +196,7 @@
       <td>Free Pack</td>
     </tr>
     <tr>
-      <td>Intro to Java syntax</td>
+      <td>Intro to Java</td>
       <td>Class 1-25</td>
       <td>Bronze Coder onwards</td>
     </tr>
@@ -254,21 +211,159 @@
         <td>Silver Coder onwards</td>
     </tr>
     <tr>
-        <td>Spring boot REST API</td>
+        <td>Spring boot and its advantages over client side firebase</td>
         <td>Class 46-50</td>
         <td>Silver Coder Onwards</td>
     </tr>
     <tr>
-        <td>Vue.js CLI and full MEVN stack app</td>
+        <td>Spring boot with mongodb, full REST Api</td>
         <td>Class 51-65</td>
         <td>Gold Coder</td>
     </tr>
     <tr>
-        <td>Discord.js to make discord bots</td>
+        <td>Authenticated application with spring boot and android studio</td>
         <td>Class 66-75</td>
         <td>Gold Coder</td>
     </tr>
   </table>
+  <h1>Game Development</h1>
+  <table id="gd">
+    <tr>
+      <th>Concept</th>
+      <th>Classes</th>
+      <th>Course Required</th>
+    </tr>
+    <tr>
+      <td>Overview</td>
+      <td>Trial class - class 0</td>
+      <td>Free Pack</td>
+    </tr>
+    <tr>
+      <td>Intro to Unity with playmaker</td>
+      <td>Class 1-25</td>
+      <td>Bronze Coder onwards</td>
+    </tr>
+    <tr>
+        <td>Unity with c#</td>
+        <td>Class 26-40</td>
+        <td>Silver Coder onwards</td>
+    </tr>
+    <tr>
+        <td>Unity multiplayer game with concepts taught earlier</td>
+        <td>Class 41-45</td>
+        <td>Silver Coder onwards</td>
+    </tr>
+    <tr>
+        <td>Audio Production</td>
+        <td>Class 46-50</td>
+        <td>Silver Coder Onwards</td>
+    </tr>
+    <tr>
+        <td>Blender for 3d models</td>
+        <td>Class 51-65</td>
+        <td>Gold Coder</td>
+    </tr>
+    <tr>
+        <td>Multiplayer game with self made 3d models for level design, and audio</td>
+        <td>Class 66-75</td>
+        <td>Gold Coder</td>
+    </tr>
+  </table>
+  <h1>Competitive Programming</h1>
+  <table>
+    <tr>
+        <th>Concept</th>
+        <th>Classes</th>
+        <th>Course Required</th>
+      </tr>
+      <tr>
+        <td>Overview</td>
+        <td>Trial class - class 0</td>
+        <td>Free Pack</td>
+      </tr>
+      <tr>
+        <td>Intro to c++</td>
+        <td>Class 1-25</td>
+        <td>Bronze Coder onwards</td>
+      </tr>
+      <tr>
+          <td>Intro to algorithms</td>
+          <td>Class 26-40</td>
+          <td>Silver Coder onwards</td>
+      </tr>
+      <tr>
+          <td>Applying algorithms in c++, doing a contest on codeforces</td>
+          <td>Class 41-45</td>
+          <td>Silver Coder onwards</td>
+      </tr>
+      <tr>
+          <td>Adanced Algorithms</td>
+          <td>Class 46-50</td>
+          <td>Silver Coder Onwards</td>
+      </tr>
+      <tr>
+          <td>Time Complexity</td>
+          <td>Class 51-65</td>
+          <td>Gold Coder</td>
+      </tr>
+      <tr>
+          <td>Space Complexity</td>
+          <td>Class 66-75</td>
+          <td>Gold Coder</td>
+      </tr>
+  </table>
+  <div id="pricing">
+    <div id="cards">
+      <div class="card">
+        <h1>Trial/Free Pack</h1>
+        <h2>Free of cost</h2>
+        <ul>
+          <li>1:1 class for any course of choice</li>
+          <li>Access to 5 articles</li>
+          <li>Access to 2 recorded lectures</li>
+        </ul>
+      <a href="/signup" style="margin: auto;"> Enroll Now </a>
+      </div>
+      <div class="card">
+        <h1>Bronze Coder</h1>
+        <h2>Starting at ₹4000</h2>
+        <ul>
+          <li>4 1:1 classes</li>
+          <li>Access to all articles for 6 months</li>
+          <li>Access to all recorded lectures for 6 months</li>
+          <li>25 Live group sessions</li>
+        </ul>
+        <a href="/signup" style="margin: auto;">Enroll Now</a>
+      </div>
+      <div class="card">
+        <h1>Silver Coder</h1>
+        <h2>Starting at ₹8000</h2>
+        <ul>
+          <li>50 group live sessions</li>
+          <li>8 1:1 sessions</li>
+          <li>Access to all articles for 6 months</li>
+          <li>Access to all recorded sessions for 6 months</li>
+          <li>Activities/Projects after all classes</li>
+        </ul>
+        <a href="/signup">Enroll Now</a>
+      </div>
+      <div class="card">
+        <h1>Gold Coder</h1>
+        <h2>Starting at ₹16000</h2>
+        <ul>
+          <li>80 group live sessions</li>
+          <li>15 1:1 sessions</li>
+          <li>Access to all articles for 1 year</li>
+          <li>Access to all recorded sessions for 1 year</li>
+          <li>Activities/Projects after all classes</li>
+          <li>
+            Chance to represent academy in various competitions with cash prizes
+          </li>
+        </ul>
+        <a href="/signup">Enroll Now</a>
+      </div>
+    </div>
+  </div>
 <br><br>
 <style>
     @import url("/css/about.css");
@@ -282,4 +377,5 @@
 <style>
     @import url("/css/home.css");
     @import url('/css/about.css');
+    @import url("/css/pricing.css");
 </style>

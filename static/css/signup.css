@@ -83,17 +83,28 @@ form {
   margin: auto;
   border-radius: 90px;
 }
+@media (max-width: 768px) {
+  #main-form {
+    flex-direction: column;
+    border-radius: 0 !important;
+    margin-top: 50px;
+    width: 100% !important;
+  }
+  #main-form img {
+    display: none;
+  }
+}
 
 .active-btn {
-  background-color: #00072dff;
-  color: white;
+  background-color: #a6e1faff;
   border: 0;
   font-size: 30px;
   padding: 0.5rem;
 }
 
 .inactive-btn {
-  background-color: #a6e1faff;
+  background-color: #00072dff;
+  color: white;
   font-size: 30px;
   border: 0;
   padding: 0.5rem;

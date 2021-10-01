@@ -1,5 +1,19 @@
 const express = require("express");
 const Student = require("../models/Student");
+const path = require("path");
+const Lec = require("../models/Lec");
+const Article = require("../models/Article");
+const multer = require("multer");
+const fs = require("fs");
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, "uploads/");
+  },
+  filename: function (req, file, cb) {
+    cb(null, Date.now() + path.extname(file.originalname)); //Appending extension
+  },
+});
+const upload = multer({ storage });
 const { v4: uuid4 } = require("uuid");
 const otps = {};
 const router = express.Router();
@@ -24,6 +38,32 @@ router.post("/new-student", (req, res) => {
     }
   });
 });
+router.post("/update-student", async (req, res) => {
+  console.log("updating");
+  console.log(req.body);
+  if (req.body.password != process.env.PASSWORD) {
+    res.redirect("/");
+  } else {
+    const std = await Student.findOne({ email: req.body.email });
+    if (std) {
+      std.pack = req.body.pack;
+      std.save();
+      res.redirect("/auth/admin");
+    } else {
+      res.redirect("/");
+    }
+  }
+});
+router.post("/new-article", async (req, res) => {
+  const { title, html, password } = req.body;
+  if (password !== process.env.password) {
+    return res.redirect("/");
+  }
+  const uuid = uuid4();
+  const art = new Article({ title, content: html, uuid });
+  art.save();
+  res.redirect("/dashboard");
+});
 router.post("/login", async (req, res) => {
   const { email, password } = req.body;
   const std = await Student.findOne({ email, password });
@@ -32,6 +72,36 @@ router.post("/login", async (req, res) => {
   } else {
     res.cookie("uuid", std.uuid, { maxAge: Date.now() + 2.628e9 });
     res.redirect("/");
+  }
+});
+router.get("/admin", async (req, res) => {
+  res.render("admin");
+});
+router.post("/find-student", async (req, res) => {
+  const { email } = req.body;
+  res.cookie("studentFound", email);
+  res.redirect("/auth/admin");
+});
+router.post("/admin", async (req, res) => {
+  const { password } = req.body;
+  const std = await Student.findOne({ email: req.cookies.studentFound });
+  if (password !== process.env.PASSWORD) {
+    res.redirect("/");
+  } else {
+    res.render("admin-view", {
+      student: std ? std : undefined,
+    });
+  }
+});
+router.post("/new-lecture", upload.single("video"), (req, res, next) => {
+  const { title, password } = req.body;
+  console.log(title, password);
+  if (password !== process.env.PASSWORD) {
+    return res.redirect("/");
+  } else {
+    const lec = new Lec({ title, video: `/${req.file.path}`, uuid: uuid4() });
+    lec.save();
+    res.redirect("/dashboard");
   }
 });
 router.get("/verify-email", async (req, res) => {

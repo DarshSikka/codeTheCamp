@@ -2,7 +2,7 @@ const Student = require("../models/Student");
 const auth = async (req, res, next) => {
   req.logout = () => {
     res.cookie("uuid", "", { maxAge: Date.now() - 100000000 });
-    next();
+    res.redirect("/");
   };
   if (!req.cookies.uuid) {
     req.user = {

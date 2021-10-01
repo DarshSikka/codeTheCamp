@@ -1,4 +1,68 @@
-
-<form><input type="text" name="attempt" placeholder="OTP">
-<button type="submit">Submit</button>
+<form>
+  <div id="container">
+    <h1>Email Verification</h1>
+    <input type="text" name="attempt" placeholder="Enter verfication code" />
+    <button type="submit">Submit</button>
+    <div id="notice">
+      <h2>We have sent you a verification code on your registered email.</h2>
+    </div>
+  </div>
 </form>
+<style>@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300&family=Pangolin&display=swap");
+  #container h1{
+      text-align: center;
+      font-size: 54px;
+      font-family: "Inter", sans-serif;
+      color:black;
+  }
+  #notice{
+      background-color:  rgba(94, 204, 145, 0.54);
+      color: #157B44;
+      border-radius: 20px;
+      font-size: 14px;
+     padding:0px 10px;
+     font-family: "Inter", sans-serif;
+  }
+  #container{ padding: 1rem;
+      background: #FFFFFF;
+  border-radius: 54px;
+  width: 700px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  }
+  #container input{
+      border: 1px solid #020074; 
+      border-radius: 65px;
+      width: 500px;
+      padding: 1rem;
+      font-size: 20px;
+      outline: none;
+  }
+  #container button{
+      border-radius: 10px;
+      background: #020074;
+      font-size:24px;
+      text-align: center;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+  }
+  #container button:hover{
+      background-color: black;
+      transition: 2s ease-in-out;
+  }
+  body{
+      background-color: black;
+      display: flex;
+      align-items:center;
+      justify-content:center;
+  }
+  form{
+      display: flex;
+      flex-direction: column;
+  }
+  </style>

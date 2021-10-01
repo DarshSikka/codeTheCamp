@@ -1,0 +1,33 @@
+#find-student {
+  display: flex;
+  justify-content: center;
+  background: black;
+}
+#find-student input {
+  font-size: 20px;
+}
+#find-student button {
+  font-size: 20px;
+}
+#find-student * {
+  padding: 1rem;
+}
+
+.student-details {
+  font-size: 20px;
+}
+
+.selection {
+  display: flex;
+}
+.selection button {
+  background-color: #00072dff;
+  border-radius: 0;
+  border: 0;
+  color: white;
+  padding: 1rem;
+  font-size: 50px;
+  width: 33.33%;
+}
+
+/*# sourceMappingURL=admin.css.map */

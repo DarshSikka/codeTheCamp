@@ -1,0 +1,22 @@
+<nav class="navbar">
+    <div style="display: flex; align-items: center;">
+    <a href="/dashboard"><img src="/logo.png" width="40" height="40"></a>
+    <a href="/pricing">Pricing</a>
+    <a href="#about">About Us</a>
+    </div>
+    <a href="/logout"><button class="login-button">Auth</button></a>
+</nav>
+<h1><%= resource.title %></h1>
+<div>
+    <% if(resource.content){%>
+    <%- resource.content %>
+    <% }%>
+    <% if(resource.video){%>
+       <video controls>
+           <source src="<%= resource.video %>" />
+       </video>
+   <% }%>
+</div>
+<style>
+    @import url("/css/home.css");
+</style>

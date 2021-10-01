@@ -73,20 +73,29 @@ form {
 }
 #main-form {
   display: flex;
+  @media (max-width: 768px) {
+    flex-direction: column;
+    border-radius: 0 !important;
+    margin-top: 50px;
+    width: 100% !important;
+    img {
+      display: none;
+    }
+  }
   background: $navbar;
   width: 50%;
   margin: auto;
   border-radius: 90px;
 }
 .active-btn {
-  background-color: $dark;
-  color: white;
+  background-color: $light;
   border: 0;
   font-size: 30px;
   padding: 0.5rem;
 }
 .inactive-btn {
-  background-color: $light;
+  background-color: $dark;
+  color: white;
   font-size: 30px;
   border: 0;
   padding: 0.5rem;

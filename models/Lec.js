@@ -4,7 +4,7 @@ const schema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  content: {
+  video: {
     type: String,
     required: true,
   },
@@ -13,5 +13,5 @@ const schema = new mongoose.Schema({
     required: true,
   },
 });
-const Article = mongoose.model("Article", schema, "articles");
-module.exports = Article;
+const Lec = mongoose.model("Lecture", schema, "lectures");
+module.exports = Lec;
