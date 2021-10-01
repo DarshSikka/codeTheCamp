@@ -58,6 +58,11 @@ body {
   width: 100%;
 }
 
+@media (max-width: 900px) {
+  #title {
+    animation-duration: 3s;
+  }
+}
 #tagline {
   font-size: 30px;
   font-family: "Pangolin", cursive;
