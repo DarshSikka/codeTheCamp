@@ -1,0 +1,66 @@
+@import "_variables";
+.selection{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+padding: 1rem;
+  background: black; 
+}
+.selection button{
+  font-size: 30px;
+  border: none;
+  background: transparent;
+  color: white;
+ cursor: pointer;
+}
+.active{
+  background: navy !important;
+  padding: 0.4rem;
+  border-radius: 4px;
+}
+#search{
+width: 200px;
+font-size:20px;
+
+border: 0px;
+padding: 0.2rem 1rem;
+}
+#find{
+font-size:20px;
+
+}
+#lecture{
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  width: max-content;
+  justify-content: space-around;
+  height: 50vh;
+
+}
+#lecture button{
+  padding: 0.3rem 1rem;
+}
+#lecture input{
+  width: 300px;
+font-size:20px;
+border: 0px;
+padding: 0.2rem 1rem;
+}
+#student-edit{
+  display: flex;
+  flex-direction: column;
+  width: max-content;
+  margin: auto;
+  input, select{
+    padding: 1rem;
+    font-size: 20px;
+  }
+  button{
+    font-size: 20px;
+    padding: 0.2rem 0rem;
+  }
+  height: 60vh;
+  justify-content: space-around;
+  
+}

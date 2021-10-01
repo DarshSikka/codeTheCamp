@@ -1,0 +1,40 @@
+:root {
+  --text: #fff;
+  --background-color: #0b0b0b;
+}
+
+body {
+  background-color: var(--background-color);
+}
+
+#main {
+  padding: 2rem;
+}
+
+#text h1 {
+  font-family: "Inter", sans-serif;
+  color: var(--text);
+  font-size: 60px;
+}
+
+#text p {
+  font-family: "Inter", sans-serif;
+  color: var(--text);
+  font-size: 30px;
+}
+
+#shrug {
+  float: right;
+  width: 500px;
+}
+
+#red {
+  color: #f02020;
+}
+
+#main {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/*# sourceMappingURL=404.css.map */

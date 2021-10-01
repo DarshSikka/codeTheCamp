@@ -1,0 +1,72 @@
+@import "_variables";
+#cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  place-items: center;
+  width: 100%;
+}
+.card:hover {
+  background-color: $main;
+  transition-duration: 3s;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 500px;
+  background: $black;
+  border-radius: 40px;
+  margin-top: 3rem;
+  padding: 1rem;
+  text-align: left;
+  ul {
+    list-style-type: circle;
+  }
+  a:hover {
+    color: $light;
+    background-color: $dark;
+  }
+}
+@media (min-width: 768px) {
+  .card {
+    height: 600px;
+  }
+}
+.card h1 {
+  text-align: center;
+  font-size: 60px;
+  font-family: "Inter", sans-serif;
+  line-height: 20px;
+  color: var(--text-color);
+}
+.card h2 {
+  text-align: center;
+  font-size: 40px;
+  font-family: "Inter", sans-serif;
+  color: $white;
+}
+.card li {
+  font-size: 24px;
+  font-family: "Inter", sans-serif;
+  color: $white;
+}
+.card a {
+  border-radius: 20px;
+  color: $main;
+  background-color: $light;
+  border: none;
+  font-family: "Inter", sans-serif;
+  font-size: 30px;
+  text-align: center;
+  padding: 5px 5px;
+  cursor: pointer;
+  width: 200px;
+  align-self: center;
+  text-decoration: none;
+}
+@media screen and (max-width: 768px) {
+  .card h1 {
+    font-size: 50px;
+  }
+}

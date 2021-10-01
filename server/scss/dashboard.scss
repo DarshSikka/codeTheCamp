@@ -1,0 +1,29 @@
+@import "_variables";
+a[verif] {
+  color:$light;
+}
+.article {
+  a {
+    text-decoration: none;
+    color: $light;
+    padding: 0.2rem;
+    font-size: 30px;
+  }
+}
+username {
+  color: $light;
+}
+a[verif]:hover {
+  color: red;
+}
+h1 {
+  font-size: 40px;
+}
+* {
+  font-family: "Inter", sans-serif;
+}
+.content {
+  border: 2px solid blue;
+  padding: 1rem;
+  border-radius: 4px;
+}

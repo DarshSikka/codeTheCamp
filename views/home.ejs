@@ -1,0 +1,382 @@
+<div id="home">
+<div :class="['hero', img==='default'?'homeIllus':'secondHero']">
+    <div class="hero-content">
+    <div class="radios">
+        <input type="radio" v-model="img" value="default"/>
+        <input type="radio" v-model="img" value="secondary"/>
+        </div>
+        <div class="hero-text"><h1 id="title">#include &lt;code The Camp&gt;</h1>
+   <p id="tagline" style="width: 60%;">"Experiences we create are for life, not for work. Learn what you like, and remember it for life"</p>
+    <p id="author">~ codeTheCamp</p><br /><div style="display:flex"><code id="typing-effect">{{typer}}</code><span class="cursor"></span></div>
+    </div>
+   </div>
+</div>
+<nav :class="['navbar', navbarUp?'fixedNavbar':'']">
+    <div style="display: flex; align-items: center;">
+    <a href="/dashboard"><img src="/logo.png" width="40" height="40"></a>
+    <a href="#pricing">Pricing</a>
+    <a href="#about">About Us</a>
+    </div>
+
+    <% if(user.student){%>
+        <a href="/logout">
+          <button class="login-button">
+              <%= user.student.name %>
+          </button>
+          </a>
+    <% } %>
+    <% if(!user.student){ %>
+        <a href="/signup">
+       <button class="login-button">
+        <img src="https://img.icons8.com/ios/50/000000/user--v1.png"/>
+       </button>
+       </a>
+    <%}%>
+</nav>
+<div class="courses-landing">
+    <div class="course">
+        <img src="/MachineLearning.png">
+        <div>
+            <h1>Machine Learning</h1>
+            <p>
+                Teach the computer for your needs. Ever wanted to stop using face identification and start making it? Or ever wanted to make your own Alexa? Here’s a chance to do it
+            </p>
+        </div>
+    </div>
+    <div class="course">
+        <div>
+            <h1>Web Development</h1>
+            <p>
+                Here’s the time to shine and make the click of the link projects, which look amazing, and work unbelievably well, show these to others and win their hearts for a lifetime
+            </p>
+        </div>
+        <img src="/WebDevelopment.png">
+    </div>
+    <div class="course">
+        <img src="/GameDev.png">
+        <div>
+            <h1>Game Development</h1>
+            <p>
+                I think we all can agree we all love games. Ever thought of developing one instead, if yes enroll in our course to learn game development step-by-step.
+            </p>
+        </div>
+    </div>
+    <div class="course">
+        <div>
+            <h1>App Development</h1>
+            <p>
+                Use all those mobile apps ? Here’s a chace to make them, with our App Development course, you will learn step by step how to make applications, with fascinating UI and complex database calls. We explain both android and iOs applications!
+            </p>
+        </div>
+        <img src="/AppDev.png">
+    </div>
+    <div class="course">
+        <img src="/CP.png">
+        <div>
+            <h1>Competitve Programming</h1>
+            <p>
+                Have a good mind for logic. Like maths? These are symptoms that you can become a great competitive programmer. Enroll now, and learn these algorithms with c++ to get started. 
+            </p>
+        </div>
+    </div>
+    <br /><br />
+</div>
+</div>
+<div id="about">
+    <p class="description">
+        Ever wondered who is behind all these amazing apps you use? It can be you one day. We are a coding bootcamp to make you be on the front page of a website as the creator of it.  We are the top coding bootcamp for over 15 years and trust me when you enroll with us, you enroll with the best coding bootcamp out there. 
+    </p>
+</div>
+<div id="courses">
+     <ul class="description">
+         <li>Machine Learning</li>
+         <li>Web Development</li>
+         <li>App Development</li>
+         <li>Competitve Programming</li>
+         <li>Game Development</li>
+     </ul>
+</div>
+<h1>Curicullum Overview</h1>
+<h1>Machine Leaning</h1>
+<table id="ml">
+    <tr>
+      <th>Concept</th>
+      <th>Classes</th>
+      <th>Course Required</th>
+    </tr>
+    <tr>
+      <td>Overview</td>
+      <td>Trial class - class 0</td>
+      <td>Free Pack</td>
+    </tr>
+    <tr>
+      <td>Intro to coding and Python Syntax</td>
+      <td>Class 1-25</td>
+      <td>Bronze Coder onwards</td>
+    </tr>
+    <tr>
+        <td>Data Science with plotly, numpy, pandas, matplotlib and seaborn</td>
+        <td>Class 26-40</td>
+        <td>Silver Coder onwards</td>
+    </tr>
+    <tr>
+        <td>AI with sckit learn</td>
+        <td>Class 41-45</td>
+        <td>Silver Coder onwards</td>
+    </tr>
+    <tr>
+        <td>Image Identification with opencv(cv2)</td>
+        <td>Class 46-50</td>
+        <td>Silver Coder Onwards</td>
+    </tr>
+    <tr>
+        <td>Voice Identification</td>
+        <td>Class 51-65</td>
+        <td>Gold Coder</td>
+    </tr>
+    <tr>
+        <td>Advanced AI</td>
+        <td>Class 66-75</td>
+        <td>Gold Coder</td>
+    </tr>
+  </table>
+  <h1>Web Development</h1>
+  <table id="wd">
+    <tr>
+      <th>Concept</th>
+      <th>Classes</th>
+      <th>Course Required</th>
+    </tr>
+    <tr>
+      <td>Overview</td>
+      <td>Trial class - class 0</td>
+      <td>Free Pack</td>
+    </tr>
+    <tr>
+      <td>Intro to HTML and CSS with Javascript</td>
+      <td>Class 1-25</td>
+      <td>Bronze Coder onwards</td>
+    </tr>
+    <tr>
+        <td>Vue.js CDN & CLI, intro to NPM and node.js</td>
+        <td>Class 26-40</td>
+        <td>Silver Coder onwards</td>
+    </tr>
+    <tr>
+        <td>Express.js and mongoose</td>
+        <td>Class 41-45</td>
+        <td>Silver Coder onwards</td>
+    </tr>
+    <tr>
+        <td>MEVN stack app with in depth backend</td>
+        <td>Class 46-50</td>
+        <td>Silver Coder Onwards</td>
+    </tr>
+    <tr>
+        <td>Advanced SSR application with authentication</td>
+        <td>Class 51-65</td>
+        <td>Gold Coder</td>
+    </tr>
+    <tr>
+        <td>Web Sockets</td>
+        <td>Class 66-75</td>
+        <td>Gold Coder</td>
+    </tr>
+  </table>
+  <h1>App Development</h1>
+  <table id="ad">
+    <tr>
+      <th>Concept</th>
+      <th>Classes</th>
+      <th>Course Required</th>
+    </tr>
+    <tr>
+      <td>Overview</td>
+      <td>Trial class - class 0</td>
+      <td>Free Pack</td>
+    </tr>
+    <tr>
+      <td>Intro to Java</td>
+      <td>Class 1-25</td>
+      <td>Bronze Coder onwards</td>
+    </tr>
+    <tr>
+        <td>Android studio XML and java</td>
+        <td>Class 26-40</td>
+        <td>Silver Coder onwards</td>
+    </tr>
+    <tr>
+        <td>Full android app with firebase</td>
+        <td>Class 41-45</td>
+        <td>Silver Coder onwards</td>
+    </tr>
+    <tr>
+        <td>Spring boot and its advantages over client side firebase</td>
+        <td>Class 46-50</td>
+        <td>Silver Coder Onwards</td>
+    </tr>
+    <tr>
+        <td>Spring boot with mongodb, full REST Api</td>
+        <td>Class 51-65</td>
+        <td>Gold Coder</td>
+    </tr>
+    <tr>
+        <td>Authenticated application with spring boot and android studio</td>
+        <td>Class 66-75</td>
+        <td>Gold Coder</td>
+    </tr>
+  </table>
+  <h1>Game Development</h1>
+  <table id="gd">
+    <tr>
+      <th>Concept</th>
+      <th>Classes</th>
+      <th>Course Required</th>
+    </tr>
+    <tr>
+      <td>Overview</td>
+      <td>Trial class - class 0</td>
+      <td>Free Pack</td>
+    </tr>
+    <tr>
+      <td>Intro to Unity with playmaker</td>
+      <td>Class 1-25</td>
+      <td>Bronze Coder onwards</td>
+    </tr>
+    <tr>
+        <td>Unity with c#</td>
+        <td>Class 26-40</td>
+        <td>Silver Coder onwards</td>
+    </tr>
+    <tr>
+        <td>Unity multiplayer game with concepts taught earlier</td>
+        <td>Class 41-45</td>
+        <td>Silver Coder onwards</td>
+    </tr>
+    <tr>
+        <td>Audio Production</td>
+        <td>Class 46-50</td>
+        <td>Silver Coder Onwards</td>
+    </tr>
+    <tr>
+        <td>Blender for 3d models</td>
+        <td>Class 51-65</td>
+        <td>Gold Coder</td>
+    </tr>
+    <tr>
+        <td>Multiplayer game with self made 3d models for level design, and audio</td>
+        <td>Class 66-75</td>
+        <td>Gold Coder</td>
+    </tr>
+  </table>
+  <h1>Competitive Programming</h1>
+  <table>
+    <tr>
+        <th>Concept</th>
+        <th>Classes</th>
+        <th>Course Required</th>
+      </tr>
+      <tr>
+        <td>Overview</td>
+        <td>Trial class - class 0</td>
+        <td>Free Pack</td>
+      </tr>
+      <tr>
+        <td>Intro to c++</td>
+        <td>Class 1-25</td>
+        <td>Bronze Coder onwards</td>
+      </tr>
+      <tr>
+          <td>Intro to algorithms</td>
+          <td>Class 26-40</td>
+          <td>Silver Coder onwards</td>
+      </tr>
+      <tr>
+          <td>Applying algorithms in c++, doing a contest on codeforces</td>
+          <td>Class 41-45</td>
+          <td>Silver Coder onwards</td>
+      </tr>
+      <tr>
+          <td>Adanced Algorithms</td>
+          <td>Class 46-50</td>
+          <td>Silver Coder Onwards</td>
+      </tr>
+      <tr>
+          <td>Time Complexity</td>
+          <td>Class 51-65</td>
+          <td>Gold Coder</td>
+      </tr>
+      <tr>
+          <td>Space Complexity</td>
+          <td>Class 66-75</td>
+          <td>Gold Coder</td>
+      </tr>
+  </table>
+  <div id="pricing">
+    <div id="cards">
+      <div class="card">
+        <h1>Trial Pack</h1>
+        <h2>Free of cost</h2>
+        <ul>
+          <li>1:1 class for any course of choice</li>
+          <li>Access to 2 articles</li>
+          <li>Access to 1 recorded lecture</li>
+        </ul>
+      <a href="/signup" style="margin: auto;"> Enroll Now </a>
+      </div>
+      <div class="card">
+        <h1>Bronze Coder</h1>
+        <h2>Starting at ₹4000</h2>
+        <ul>
+          <li>4 1:1 classes</li>
+          <li>Access to all articles for 6 months</li>
+          <li>Access to all recorded lectures for 6 months</li>
+          <li>25 Live group sessions</li>
+        </ul>
+        <a href="/signup" style="margin: auto;">Enroll Now</a>
+      </div>
+      <div class="card">
+        <h1>Silver Coder</h1>
+        <h2>Starting at ₹8000</h2>
+        <ul>
+          <li>50 group live sessions</li>
+          <li>8 1:1 sessions</li>
+          <li>Access to all articles for 6 months</li>
+          <li>Access to all recorded sessions for 6 months</li>
+          <li>Activities/Projects after all classes</li>
+        </ul>
+        <a href="/signup">Enroll Now</a>
+      </div>
+      <div class="card">
+        <h1>Gold Coder</h1>
+        <h2>Starting at ₹16000</h2>
+        <ul>
+          <li>80 group live sessions</li>
+          <li>15 1:1 sessions</li>
+          <li>Access to all articles for 1 year</li>
+          <li>Access to all recorded sessions for 1 year</li>
+          <li>Activities/Projects after all classes</li>
+          <li>
+            Chance to represent academy in various competitions with cash prizes
+          </li>
+        </ul>
+        <a href="/signup">Enroll Now</a>
+      </div>
+    </div>
+  </div>
+  <a style="color:white"href="tel:9953577477">Contact</a>
+<br><br><br>
+<style>
+    @import url("/css/about.css");
+</style>
+<footer>
+    Made with <span style="color: red">&lt;3</span> by Exun Clan
+</footer>
+<script src="/js/typing-effect.js"></script>
+<script src="https://unpkg.com/vue@3.0.1"></script>
+<script src="/js/home.js"></script>
+<style>
+    @import url("/css/home.css");
+    @import url('/css/about.css');
+    @import url("/css/pricing.css");
+</style>

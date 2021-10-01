@@ -1,0 +1,82 @@
+<nav class="navbar">
+    <div style="display: flex; align-items: center;">
+    <a href="/"><img src="/logo.png" width="40" height="40"></a>
+    <a href="/#pricing">Pricing</a>
+    <a href="/#about">About Us</a>
+    </div>
+
+    <% if(user.student){%>
+        <a href="/logout">
+          <button class="login-button">
+              <%= user.student.name %>
+          </button>
+          </a>
+    <% } %>
+    <% if(!user.student){ %>
+        <a href="/login">
+       <button class="login-button">
+         Login
+       </button>
+       </a>
+    <%}%>
+</nav>
+<div class="info">
+<h1>Hi, <username><%= user.student.name %></username></h1>
+<h1>Your Pack: <username><%= user.student.pack %></username></h1>
+
+<h1>Your course: <username><%=user.student.subject %></username></h1>
+<% if(!user.student.verified){ %>
+    <span>Your email has not been verified, <a verif href="/auth/verify-email">click to verify</a></span>
+<%}%>
+<% if(user.student.verified){ %>
+    <span id="notice">Your email has been verified</span>
+ <% } %>
+</div>
+<div style="display:flex;justify-content: space-around;">
+    <div class="content">
+ <h1 class="flex-heading">Articles</h1>
+ <% articles.forEach(article=>{%>
+    <%= console.log(article) %>
+    <div class="article">
+        <a href="/resource/<%=article.uuid%>"><%= article.title %></a>
+    </div>
+<% })%>
+</div>
+<div class="content">
+<h1 class="flex-heading">Lectures</h1>
+<% lectures.forEach(article=>{%>
+    <%= console.log(article) %>
+    <div class="article">
+        <a href="/resource/<%=article.uuid%>"><%= article.title %></a>
+    </div>
+<% })%>
+</div>
+</div>
+<style>
+    @import url("/css/layout.css");
+    @import url("/css/home.css");
+    @import url("/css/dashboard.css");
+    #notice{
+        background-color:  rgba(94, 204, 145, 0.54);
+        color: white;
+        border-radius: 20px;
+        font-size: 14px;
+        padding: 0.2rem 0.5rem;
+        font-family: "Inter", sans-serif;
+    }
+    .info{
+        padding: 2rem;
+        width: max-content;
+        margin: auto;
+        background: black;
+        border-radius: 4px;
+        margin-bottom: 20px;
+    }
+
+    @media(max-width: 768px){
+        .info{
+            width: 100vw;
+            padding: 1rem 0rem;
+        }
+    }
+</style>

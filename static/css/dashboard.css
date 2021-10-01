@@ -1,0 +1,36 @@
+a[verif] {
+  color: white;
+  background: red;
+  padding: 1rem;
+}
+
+.article a {
+  text-decoration: none;
+  color: #a6e1faff;
+  padding: 0.2rem;
+  font-size: 30px;
+}
+
+username {
+  color: #a6e1faff;
+}
+
+username:hover {
+  color: red;
+}
+
+h1 {
+  font-size: 40px;
+}
+
+* {
+  font-family: "Inter", sans-serif;
+}
+
+.content {
+  border: 2px solid blue;
+  padding: 1rem;
+  border-radius: 4px;
+}
+
+/*# sourceMappingURL=dashboard.css.map */

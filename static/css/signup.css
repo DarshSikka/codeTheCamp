@@ -1,0 +1,163 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300&family=Pangolin&display=swap");
+form {
+  display: flex;
+  flex-direction: column;
+}
+form input {
+  padding: 1rem;
+}
+form button {
+  padding: 1rem 1.5rem;
+}
+
+#main-container {
+  background: #ffffff;
+  box-shadow: 0px 4px 16px 2px rgba(34, 40, 49, 0.75);
+  border-radius: 90px;
+  height: 75vh;
+  display: flex;
+  flex-wrap: wrap;
+  width: max-content;
+  margin: auto;
+}
+
+#reg {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+body {
+  background: #00072dff;
+}
+
+/*this isn't looking great 
+body {
+  background-image: url("/background.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}*/
+form {
+  padding: 20px 20px;
+  text-align: left;
+}
+
+form h1 {
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 50px;
+  line-height: 100%;
+  color: #a6e1faff;
+}
+
+#banner {
+  height: 100%;
+  border-radius: 90px 0px 0px 90px;
+}
+
+.text-input {
+  border: 1px solid #ffffff;
+  box-sizing: border-box;
+  border-radius: 4px;
+  width: auto;
+  height: 3rem;
+  padding: 1rem;
+  font-size: 30px;
+  color: #222831;
+  outline: none;
+  margin-bottom: 2rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+}
+
+#main-form {
+  display: flex;
+  background: #222831;
+  width: 50%;
+  margin: auto;
+  border-radius: 90px;
+}
+@media (max-width: 768px) {
+  #main-form {
+    flex-direction: column;
+    border-radius: 0 !important;
+    margin-top: 50px;
+    width: 100% !important;
+  }
+  #main-form img {
+    display: none;
+  }
+}
+
+.active-btn {
+  background-color: #a6e1faff;
+  border: 0;
+  font-size: 30px;
+  padding: 0.5rem;
+}
+
+.inactive-btn {
+  background-color: #00072dff;
+  color: white;
+  font-size: 30px;
+  border: 0;
+  padding: 0.5rem;
+}
+
+form button {
+  border-radius: 10px;
+  font-family: "Inter", sans-serif;
+  font-size: 30px;
+  line-height: 100%;
+  width: max-content;
+  border: none;
+  color: #00072dff;
+  transition: 1s ease-in-out;
+  align-self: center;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+select {
+  width: auto;
+  height: 3rem;
+  font-size: 20px;
+  cursor: pointer;
+  border: none;
+}
+
+form p {
+  color: #00072dff;
+  font-family: "Inter", sans-serif;
+}
+
+form a {
+  color: #a6e1faff;
+  text-decoration-line: underline;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 746px) {
+  #main-container {
+    height: auto;
+    border-radius: 0px;
+  }
+
+  #banner {
+    width: 100%;
+    height: 500px;
+    border-radius: 0px;
+  }
+
+  form {
+    text-align: center;
+  }
+}
+
+/*# sourceMappingURL=signup.css.map */
