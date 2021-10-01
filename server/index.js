@@ -1,3 +1,5 @@
+// server file
+//import modules
 const Student = require("../models/Student");
 const Lec = require("../models/Lec");
 module.exports = () => {
@@ -10,6 +12,7 @@ module.exports = () => {
   const port = process.env.PORT || 5000;
   const auth = require("../auth/middleware");
   const app = express();
+  // setup db
   mongoose.connect(process.env.DB_URI, (error, result) => {
     if (error) {
       console.error(error);
@@ -17,6 +20,7 @@ module.exports = () => {
       console.log("Connected to mongoose");
     }
   });
+  //setup middlware
   const cookieParser = require("cookie-parser");
   app.use(cookieParser());
   app.use(auth);
@@ -30,6 +34,8 @@ module.exports = () => {
   app.get("/signup", (req, res) => {
     res.render("signup");
   });
+
+  //handle basic routes here
   app.get("/dashboard", async (req, res) => {
     const articles = await Article.find({});
     const lectures = await Lec.find({});
@@ -92,8 +98,11 @@ module.exports = () => {
       res.redirect("/dashboard");
     }
   });
+
+  //handle 404 page
   app.get("*", (req, res) => {
     res.render("404");
   });
+  //start express server
   app.listen(port, () => console.log(`listening on port ${port}`));
 };

@@ -1,3 +1,4 @@
+//import models and modules
 const express = require("express");
 const Student = require("../models/Student");
 const path = require("path");
@@ -5,6 +6,8 @@ const Lec = require("../models/Lec");
 const Article = require("../models/Article");
 const multer = require("multer");
 const fs = require("fs");
+
+//setup multer
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
     cb(null, "uploads/");
@@ -14,10 +17,14 @@ const storage = multer.diskStorage({
   },
 });
 const upload = multer({ storage });
+//setup authentication essentials(email verification otp and uuid)
 const { v4: uuid4 } = require("uuid");
 const otps = {};
+
+//make router and add routes
 const router = express.Router();
 router.post("/new-student", (req, res) => {
+  // get body and do database operations
   const { name, email, subject, password } = req.body;
   const uuid = uuid4();
   const newStudent = new Student({
@@ -38,6 +45,7 @@ router.post("/new-student", (req, res) => {
     }
   });
 });
+// handle updating students
 router.post("/update-student", async (req, res) => {
   console.log("updating");
   console.log(req.body);
@@ -54,6 +62,7 @@ router.post("/update-student", async (req, res) => {
     }
   }
 });
+//handle adding articles
 router.post("/new-article", async (req, res) => {
   const { title, html, password } = req.body;
   if (password !== process.env.password) {
@@ -64,6 +73,7 @@ router.post("/new-article", async (req, res) => {
   art.save();
   res.redirect("/dashboard");
 });
+// handle login action(put cookie on login)
 router.post("/login", async (req, res) => {
   const { email, password } = req.body;
   const std = await Student.findOne({ email, password });
@@ -74,14 +84,17 @@ router.post("/login", async (req, res) => {
     res.redirect("/");
   }
 });
+// send admin in /auth/admin
 router.get("/admin", async (req, res) => {
   res.render("admin");
 });
+// handle student information request
 router.post("/find-student", async (req, res) => {
   const { email } = req.body;
   res.cookie("studentFound", email);
   res.redirect("/auth/admin");
 });
+// handle admin password request
 router.post("/admin", async (req, res) => {
   const { password } = req.body;
   const std = await Student.findOne({ email: req.cookies.studentFound });
@@ -93,6 +106,8 @@ router.post("/admin", async (req, res) => {
     });
   }
 });
+
+// handle new lecture request using multer
 router.post("/new-lecture", upload.single("video"), (req, res, next) => {
   const { title, password } = req.body;
   console.log(title, password);
@@ -104,6 +119,8 @@ router.post("/new-lecture", upload.single("video"), (req, res, next) => {
     res.redirect("/dashboard");
   }
 });
+
+// handle email verification
 router.get("/verify-email", async (req, res) => {
   const { attempt } = req.query;
   if (!req.user.student) {

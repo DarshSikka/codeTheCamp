@@ -1,3 +1,5 @@
+
+//use nodemailer to send mails
 const nodemailer = require("nodemailer");
 require("dotenv").config();
 const sendMail = async ({ to, subject, body }) => {

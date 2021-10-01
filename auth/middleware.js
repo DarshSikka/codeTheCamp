@@ -1,3 +1,5 @@
+// custom Authentication middleware, uses cookies to set req.user
+
 const Student = require("../models/Student");
 const auth = async (req, res, next) => {
   req.logout = () => {

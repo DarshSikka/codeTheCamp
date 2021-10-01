@@ -1,4 +1,6 @@
 const mongoose = require("mongoose");
+
+// schema for mongoose about Articles uploaded by admins
 const schema = new mongoose.Schema({
   title: {
     type: String,

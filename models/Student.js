@@ -1,4 +1,6 @@
 const mongoose = require("mongoose");
+
+//student model with mongoose
 const studentSchema = new mongoose.Schema({
   name: {
     type: String,
