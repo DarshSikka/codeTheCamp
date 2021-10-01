@@ -2,7 +2,7 @@
 
 ## Hosted at https://codethecamp.darshsikka.repl.co/
 
-## Version control at https://github.com/DarshSikka/codeTheCamp
+## Version control at https://github.com/DarshSikka/codeTheCamp/tree/main
 
 ### Pages:
 
